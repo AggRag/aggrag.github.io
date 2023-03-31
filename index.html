@@ -1,32 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Web Form PDF Responsive</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patient Record</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Responsive Form PDF</h1>
-	<form id="myForm">
-		<label for="name">Name:</label>
-		<input type="text" id="name" name="name" required>
-
-		<label for="email">Email:</label>
-		<input type="email" id="email" name="email" required>
-
-		<label for="phone">Phone:</label>
-		<input type="tel" id="phone" name="phone" required>
-
-		<label for="message">Message:</label>
-		<textarea id="message" name="message"></textarea>
-
-		<label for="file">File</label>
-		<input type="file" id="file" name="file">
-
-		<button type="submit" onclick="generatePDF()">Submit</button>
-	</form>
-
-	<script src="./script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <form>
+        <fieldset>
+            <legend>Patient Information</legend>
+            <div>
+                <label for="serial_number">Serial number:</label>
+                <input type="text" id="serial_number" name="serial-number" required>
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div>
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Medical Information</legend>
+            <div>
+                <label for="diagnosis">Diagnosis:</label>
+                <input type="text" id="diagnosis" name="diagnosis" required>
+            </div>
+            <div>
+                <label for="procedures">Procedures:</label>
+                <textarea id="procedures" name="procedures" required></textarea>
+            </div>
+            <div>
+                <label for="operative-findings">Operative Findings:</label>
+                <textarea id="operative_findings" name="operative-findings" required></textarea>
+            </div>
+            <div>
+                <label for="outcome">Outcome:</label>
+                <textarea id="outcome" name="outcome" required></textarea>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div>
+                <label for="identification">Identification:</label>
+                <input type="text" id="identification" name="identification" required>
+            </div>
+            <div>
+                <label for="contact">Contact:</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div>
+                <label for="hospital-name">Hospital Name:</label>
+                <input type="text" id="hospital_name" name="hospital-name" required>
+            </div>
+        </fieldset>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>
