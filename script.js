@@ -4,10 +4,13 @@ function handleSubmit(event) {
   event.preventDefault();
 
   // Get the form data
+  let currentSerialNumber = localStorage.getItem('serialNumber') || document.getElementById("serial_number").value;
+  let date = document.getElementById("date").value;
+  let name = document.getElementById("name").value;
   var data = {
-    "Serial number": document.getElementById("serial_number").value,
-    "Date": document.getElementById("date").value,
-    "Name": document.getElementById("name").value,
+    "Serial number": currentSerialNumber++,
+    "Date": date,
+    "Name": name,
     "Age": document.getElementById("age").value,
     "Sex": document.getElementById("sex").value,
     "Address": document.getElementById("address").value,
@@ -20,9 +23,11 @@ function handleSubmit(event) {
     "Hospital Name": document.getElementById("hospital_name").value,
   };
 
+  localStorage.setItem('serialNumber', currentSerialNumber);
+
 
   var csv = convertToCSV([data]);
-  downloadCSV(csv, 'medical_data.csv');
+  downloadCSV(csv, `medical_data_${date}_${name}.csv`);
 }
 
 // Function to download CSV file
